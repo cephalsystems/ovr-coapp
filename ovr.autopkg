@@ -1,0 +1,56 @@
+nuget {
+	nuspec {
+		id: ovr;
+		version: 0.4.2;
+		title: "Oculus VR SDK";
+		authors: {Oculus};
+		owners: {Cephal Systems, Pras Velagapudi};
+		licenseUrl: "https://developer.oculusvr.com/license-3.2";
+		projectUrl: "https://developer.oculusvr.com/";
+		iconUrl: "https://developer.oculusvr.com/images/header/oculus-vr-logo.png";
+		requireLicenseAcceptance: true;
+		summary: "The Oculus SDK includes documentation, samples, and tools to develop applications for the Oculus Rift VR Headset.";
+
+		description: @"The Oculus SDK includes documentation, samples,
+		and tools to develop applications for the Oculus Rift VR Headset.";
+
+		releaseNotes: "Release of OVR 0.4.2 beta.";
+		copyright: "Copyright 2014";
+		tags: { Oculus, OVR, LibOVR, native, nativepackage, CoApp };
+	};
+
+	files {
+		#defines {
+			SDK_OVR = OculusSDK\;
+		}
+
+		include: {
+			${SDK_OVR}LibOVR\include\**\*;
+		};
+
+		docs: {
+			${SDK_OVR}LICENSE.txt,
+			${SDK_OVR}Doc\**\*
+		};
+
+		[x64,v120,debug] {
+			lib: ${SDK_OVR}LibOVR\x64\VS2013\libovr64d.lib;
+		}
+
+		[x64,v120,release] {
+			lib: ${SDK_OVR}LibOVR\x64\VS2013\libovr64.lib;
+		}
+
+		[x86,debug] {
+			lib: ${SDK_OVR}LibOVR\Win32\VS2013\libovrd.lib;
+		}
+
+		[x86,release] {
+			lib: ${SDK_OVR}LibOVR\Win32\VS2013\libovr.lib;
+		}
+	};
+
+	targets {
+		Defines += HAS_OVR;
+	};
+}
