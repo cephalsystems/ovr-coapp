@@ -34,19 +34,19 @@ nuget {
 		};
 
 		[x64,v120,debug] {
-			lib: ${SDK_OVR}LibOVR\x64\VS2013\libovr64d.lib;
+			lib: ${SDK_OVR}LibOVR\Lib\x64\VS2013\libovr64d.lib;
 		}
 
 		[x64,v120,release] {
-			lib: ${SDK_OVR}LibOVR\x64\VS2013\libovr64.lib;
+			lib: ${SDK_OVR}LibOVR\Lib\x64\VS2013\libovr64.lib;
 		}
 
 		[x86,debug] {
-			lib: ${SDK_OVR}LibOVR\Win32\VS2013\libovrd.lib;
+			lib: ${SDK_OVR}LibOVR\Lib\Win32\VS2013\libovrd.lib;
 		}
 
 		[x86,release] {
-			lib: ${SDK_OVR}LibOVR\Win32\VS2013\libovr.lib;
+			lib: ${SDK_OVR}LibOVR\Lib\Win32\VS2013\libovr.lib;
 		}
 	};
 
